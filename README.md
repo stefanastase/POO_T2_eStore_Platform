@@ -8,41 +8,7 @@ Entitatile principale sunt **Produsele**, **Utilizatorii** si **Serverul** care 
 
 ### Ierarhia Product
 
-```mermaid
-classDiagram
-    Product <|-- NonFoodProduct
-    Product <|-- FoodProduct
-    NonFoodProduct <|-- DiscountedProduct
-    NonFoodProduct <|-- ReturnedProduct
-    DiscountedProduct <|-- ResealedProduct
-    ReturnedProduct <|-- ResealedProduct
-      Product : string name
-      Product : int quantity
-      Product : string category
-      Product : int id
-      Product: bool checkQuantity()
-      Product: void decreaseQuanitity()
-      Product: void increaseQuanitity()
-      class NonFoodProduct{
-          string producer
-          int yearsOfWarranty
-          float price
-      }
-      class FoodProduct{
-          float leiPerKg
-          string countryOfOrigin
-      }
-      class DiscountedProduct{
-          int discountPercentage
-          float priceAfterDiscount()
-      }
-      class ReturnedProduct{
-          string reason
-      }
-      class ResealedProduct{
-          int wearPercentage
-      }
-```
+!(product_uml.jpg)
 
 Cea mai complicata ierarhie de clase din proiect, include clasa abstracta `Product` din care se deriveaza 2 tipuri principale de produse: `NonFoodProduct` si `FoodProduct`. 
 
@@ -67,37 +33,7 @@ Clasa `DiscountedProduct` contine, in plus, o metoda pentru a determina pretul d
 
 ### Ierarhia User
 
-```mermaid
-classDiagram
-    User <|-- PremiumUser
-    User <|-- BasicUser
-    Address --o User
-    class User{
-        Address billingData
-        Address deliveryData
-        string lastName
-        string firstName
-        string email
-        int userID
-        float getTransportCost()
-        string getUserType()
-    }
-    class Address{
-        string county
-        string locality
-        string street
-        int number
-        string block
-        int apartment
-    }
-    class BasicUser{
-        float costTransport
-    }
-    class PremiumUser{
-        map<int, int> discounts
-        int premiumSubscriptionCost
-    }
-```
+!(user_uml.jpg)
 
 Clasa `User` este una abstracta, care reprezinta schita celor 2 tipuri de utilizatori: `BasicUser` si `PremiumUser`. Astfel, reusim sa distingem tipurile de useri prin diferite campuri/metode, oferind posibilitatea particularizarilor.
 
