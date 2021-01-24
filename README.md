@@ -8,7 +8,7 @@ Entitatile principale sunt **Produsele**, **Utilizatorii** si **Serverul** care 
 
 ### Ierarhia Product
 
-!(product_uml.jpg)
+![Product_diagram](product_uml.jpg)
 
 Cea mai complicata ierarhie de clase din proiect, include clasa abstracta `Product` din care se deriveaza 2 tipuri principale de produse: `NonFoodProduct` si `FoodProduct`. 
 
@@ -33,7 +33,7 @@ Clasa `DiscountedProduct` contine, in plus, o metoda pentru a determina pretul d
 
 ### Ierarhia User
 
-!(user_uml.jpg)
+![USer_diagram](user_uml.jpg)
 
 Clasa `User` este una abstracta, care reprezinta schita celor 2 tipuri de utilizatori: `BasicUser` si `PremiumUser`. Astfel, reusim sa distingem tipurile de useri prin diferite campuri/metode, oferind posibilitatea particularizarilor.
 
